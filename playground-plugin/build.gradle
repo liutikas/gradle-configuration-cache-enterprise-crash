@@ -1,0 +1,22 @@
+plugins {
+    id "groovy-gradle-plugin"
+    id "org.jetbrains.kotlin.jvm" version "1.6.0"
+}
+
+repositories {
+    gradlePluginPortal()
+}
+
+dependencies {
+    implementation "com.gradle:gradle-enterprise-gradle-plugin:3.7.1"
+    implementation "com.gradle:common-custom-user-data-gradle-plugin:1.5"
+}
+
+gradlePlugin {
+    plugins {
+        gradleEnterpriseConventions {
+            id = "playground-ge-conventions"
+            implementationClass = "androidx.playground.GradleEnterpriseConventionsPlugin"
+        }
+    }
+}
